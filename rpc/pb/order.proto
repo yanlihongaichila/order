@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package order;
+option go_package="./order";
+
+
+service Order {
+  rpc Ping(Request) returns(Response);
+  rpc CreatedOrder(Request) returns(Response);
+  rpc DeletedOrder(Request) returns(Response);
+  rpc UpdatedOrder(Request) returns(Response);
+  rpc GetOrderById(Request) returns(Response);
+  rpc GetOrders(Request) returns(Response);
+
+}
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+message OrderInfo {
+
+}
